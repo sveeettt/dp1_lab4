@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!-- format="3" означает современный формат ROS 2 -->
 <package format="3">
   <name>my_project_bringup</name>
   <version>0.0.0</version>
@@ -8,9 +9,11 @@
   <license>TODO</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-
+<!-- rviz2  для визуализации (открытие RViz с нашим конфигом) -->
   <exec_depend>rviz2</exec_depend>
+  <!-- turtlebot3_gazebo  для запуска мира Gazebo и спавна робота -->
   <exec_depend>turtlebot3_gazebo</exec_depend>
+  <!--  для 3D-модели робота -->
   <exec_depend>turtlebot3_description</exec_depend>
 
   <export>
