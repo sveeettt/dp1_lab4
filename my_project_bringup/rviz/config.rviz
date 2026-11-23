@@ -1,4 +1,5 @@
 Panels:
+# Левая панель со списком дисплеев (что отображаем)
   - Class: rviz_common/Displays
     Help Height: 78
     Name: Displays
@@ -8,12 +9,14 @@ Panels:
         - /Status1
       Splitter Ratio: 0.5
     Tree Height: 549
+# Правая панель с настройками камеры (как смотрим)
   - Class: rviz_common/Views
     Name: Views
     Splitter Ratio: 0.5
 Visualization Manager:
   Class: ""
   Displays:
+# 1. СЕТКА НА ПОЛУ
     - Alpha: 0.5
       Cell Size: 1
       Class: rviz_default_plugins/Grid
@@ -23,20 +26,23 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
+# 2. 3D-МОДЕЛЬ РОБОТА
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Description Topic:
         Value: /robot_description
       Enabled: true
       Name: RobotModel
+# 3. ДАННЫЕ С ЛИДАРА
     - Alpha: 1
       Class: rviz_default_plugins/LaserScan
       Color: 255; 0; 0
       Enabled: true
       Name: LaserScan
       Topic:
-        Value: /scan
+        Value: /scan # Топик с данными лидара
       Size (m): 0.05
+# 4. КАРТИНКА С КАМЕРЫ
     - Class: rviz_default_plugins/Image
       Enabled: true
       Name: Image
@@ -44,17 +50,17 @@ Visualization Manager:
         Value: /camera/image_raw
   Enabled: true
   Global Options:
-    Fixed Frame: base_footprint
+    Fixed Frame: base_footprint # Точка отсчёта = центр робота
     Frame Rate: 30
   Tools:
-    - Class: rviz_default_plugins/Interact
-    - Class: rviz_default_plugins/MoveCamera
-    - Class: rviz_default_plugins/Select
-    - Class: rviz_default_plugins/FocusCamera
-    - Class: rviz_default_plugins/Measure
+    - Class: rviz_default_plugins/Interact # Взаимодействие с объектами
+    - Class: rviz_default_plugins/MoveCamera # Перемещение камеры
+    - Class: rviz_default_plugins/Select # Выделение
+    - Class: rviz_default_plugins/FocusCamera # Фокус на объекте
+    - Class: rviz_default_plugins/Measure # Линейка
   Views:
     Current:
-      Class: rviz_default_plugins/Orbit
+      Class: rviz_default_plugins/Orbit # Орбитальная камера (вращение мышкой)
       Distance: 5.0
       Focal Point:
         X: 0
