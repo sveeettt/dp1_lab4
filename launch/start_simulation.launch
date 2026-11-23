@@ -1,7 +1,0 @@
-<launch>
-  <!-- 1. Запуск мира Gazebo и модели робота -->
-  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch" />
-
-  <!-- 2. Запуск RViz с вашим конфигом -->
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find my_project_bringup)/rviz/config.rviz" />
-</launch>
